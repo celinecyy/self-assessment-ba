@@ -1,0 +1,440 @@
+/* Tailwind */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* Font */
+@font-face {
+  font-family: "Lexend";
+  src: url("../font/Lexend-VariableFont_wght.ttf") format("truetype");
+  font-optical-sizing: auto;
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* General Styles */
+
+
+body {
+  font-family: "Lexend", Verdana, Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: var(--scale2);
+  line-height: var(--line-height-base);
+  letter-spacing: calc(0.05 * var(--base-size));
+  word-spacing: calc(0.16 * var(--base-size));
+  box-sizing: border-box;
+  background-color: lavenderWeb;
+  width: 100%;
+  height: 100%;
+  color: var(--text);
+  background-color: var(--bg);
+}
+
+
+.shadow {
+  -webkit-box-shadow: var(--glasBoxShadow);
+  -moz-box-shadow: var(--glasBoxShadow);
+  box-shadow: var(--glasBoxShadow);
+}
+
+.shadow:hover {
+  -webkit-box-shadow: var(--shadow);
+  -moz-box-shadow: var(--shadow);
+  box-shadow: var(--shadow);
+}
+
+.glassBox {
+  background: var(--box);
+  -webkit-box-shadow: var(--glasBoxShadow);
+  -moz-box-shadow: var(--glasBoxShadow);
+  box-shadow: var(--glasBoxShadow);
+
+  -moz-backdrop-filter: var(--blur);
+  -o-backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+  backdrop-filter: var(--blur);
+
+  -webkit-transition: all 0.24s ease-in-out;
+  -moz-transition: all 0.24s ease-in-out;
+  transition: all 0.24s ease-in-out;
+}
+
+.glassBox:not(.no-hover):hover {
+  background: var(--boxHover);
+}
+
+.glassBlur {
+  -moz-backdrop-filter: var(--blur);
+  -o-backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+  backdrop-filter: var(--blur);
+}
+
+.glassBox2 {
+  background: var(--box);
+  -webkit-box-shadow: var(--glasBoxShadow);
+  -moz-box-shadow: var(--glasBoxShadow);
+  box-shadow: var(--glasBoxShadow);
+
+  -moz-backdrop-filter: var(--blur);
+  -o-backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+  backdrop-filter: var(--blur);
+
+  -webkit-transition: all 0.24s ease-in-out;
+  -moz-transition: all 0.24s ease-in-out;
+  transition: all 0.24s ease-in-out;
+}
+
+.glassBox3 {
+  background: var(--fg);
+  
+}
+
+.rounded-xl {
+  border-radius: var(--scale2);
+}
+
+.svgFill {
+  fill: var(--text);
+}
+
+.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.selected-button {
+  background-color: var(--ev);
+  
+}
+
+/* Smooth Transitions & Performance */
+.transition {
+  -webkit-transition: all 0.24s ease-in-out;
+  -moz-transition: all 0.24s ease-in-out;
+  transition: all 0.24s ease-in-out;
+}
+
+/* Typography */
+p,
+li {
+  font-size: calc(var(--scale2) + 0.24vmin);
+  line-height: calc(var(--line-height-base) * 1.2);
+}
+
+.smallTextSize {
+  font-size: 14px;
+}
+
+
+
+:root p,
+:root li {
+  font-weight: 200;
+}
+
+.mainTitle,
+h1 {
+  font-size: calc(var(--scale4) * 2);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.titleSubtopic h1::before {
+  content: attr(data-number);
+  position: absolute;
+  left: 0;
+  bottom: -14px;
+  font-size: calc(var(--scale2) * 15); /* 240px */
+  font-weight: 800;
+  line-height: 1;
+  opacity: 0.24;
+  pointer-events: none;
+}
+
+.secondTitle,
+h2 {
+  font-size: var(--scale5);
+  font-weight: 700;
+  margin-bottom: var(--scale4);
+}
+
+.thirdTitle,
+h3 {
+  font-size: var(--scale4);
+  font-weight: 600;
+  margin-bottom: var(--scale2);
+}
+
+.fourthTitle,
+h4 {
+  font-size: var(--scale3);
+  font-weight: 600;
+  margin-bottom: var(--base-size);
+}
+
+
+
+:root section b,
+:root section strong {
+  font-weight: 600;
+}
+
+i,
+b,
+strong {
+  font-size: inherit;
+}
+
+/* List Styles */
+ul,
+ol {
+  padding-left: var(--scale3);
+  margin: var(--scale4) 0;
+}
+
+ul {
+  list-style: disc;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+li {
+  margin-bottom: var(--base-size);
+}
+
+ol li::marker {
+  font-weight: 600;
+}
+
+.specialText {
+  background: var(--box);
+  border-radius: var(--scale2);
+  padding: var(--scale2);
+  font-weight: 400 !important;
+  margin-bottom: var(--scale2);
+}
+
+/* Adjust spacing after <p>, <ul>, <ol> unless another of the same follows */
+p:not(:last-child):not(:has(+ p)):not(:has(+ ul)):not(:has(+ ol)),
+ol:not(:last-child):not(:has(+ p)):not(:has(+ ul)):not(:has(+ ol)),
+ul:not(:last-child):not(:has(+ p)):not(:has(+ ul)):not(:has(+ ol)) {
+  margin-bottom: 56px;
+}
+
+p + p {
+  margin-top: var(--scale3);
+}
+
+/* Links */
+a {
+  font-size: inherit;
+  font-weight: 600;
+}
+
+main p a,
+.inlineLink {
+  position: relative;
+}
+
+main p a::after,
+.inlineLink::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--tb);
+  transition: width 0.24s ease-in-out;
+}
+
+main p a:hover::after,
+.inlineLink:hover::after {
+  width: 100%;
+}
+
+:root a.active {
+  background-color: var(--text);
+  color: var(--bg);
+}
+
+
+.menuList a:hover,
+.menuList a:focus,
+#iconNav .iconWrapper.active,
+#iconNav .iconWrapper:hover,
+a.firstLevel:hover {
+  background-color: var(--bg);
+}
+
+:root .menuList a {
+  font-weight: 250;
+}
+
+:root #dropDown {
+  background-color: var(--ev);
+}
+
+a.active {
+  font-weight: 600 !important;
+}
+
+.box {
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg);
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box2 {
+  width: 100%;
+  height: 100%;
+  background-color: var(--ev);
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Background Circles */
+.BgCircle::before,
+.BgCircle::after {
+  content: "";
+  position: fixed;
+  border-radius: 100%;
+  -webkit-filter: var(--blur);
+  -moz-filter: var(--blur);
+  filter: var(--blur);
+  opacity: 40%;
+  z-index: -1;
+  pointer-events: none;
+  -webkit-animation: irregularPulse 10s infinite ease-in-out,
+    irregularRotate 60s infinite ease-in-out;
+  -moz-animation: irregularPulse 10s infinite ease-in-out,
+    irregularRotate 60s infinite ease-in-out;
+  animation: irregularPulse 10s infinite ease-in-out,
+    irregularRotate 60s infinite ease-in-out;
+}
+
+.BgCircle:before {
+  right: 0;
+  top: -10vw;
+  width: 40vw;
+  height: 40vw;
+  background: var(--rGradient);
+}
+
+.BgCircle:after {
+  left: 0;
+  bottom: -5vw;
+  width: 35vw;
+  height: 35vw;
+  background: var(--lGradient);
+}
+
+@keyframes irregularPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  25% {
+    transform: scale(1.08);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(0.96);
+    opacity: 0.35;
+  }
+  75% {
+    transform: scale(1.2);
+    opacity: 0.45;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+}
+
+@keyframes irregularRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(60deg);
+  }
+  60% {
+    transform: rotate(150deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Small Desktop - Tailwind (xl) */
+@media screen and (max-width: 1280px) {
+  h1,
+  h2 {
+    hyphens: auto;
+  }
+
+  .fourthTitle,
+  h4 {
+    font-size: var(--scale2);
+  }
+
+  p,
+  li {
+    font-size: var(--scale2);
+  }
+}
+
+/* Tablets (Landscape)  - Tailwind (lg) */
+@media screen and (max-width: 1024px) {
+  .titleSubtopic h1::before {
+    font-size: calc(var(--scale2) * 10);
+  }
+
+  h1 {
+    font-size: var(--scale5) !important;
+    hyphens: auto;
+  }
+
+  h2 {
+    font-size: var(--scale4) !important;
+    hyphens: auto;
+  }
+
+  h3 {
+    font-size: var(--scale3) !important;
+  }
+}
+  
+
+/* Smartphones (Portrait) - Tailwind (md) */
+@media screen and (max-width: 768px) {
+  .smallTextSize {
+    font-size: var(--scale2) !important;
+  }
+
+  .BgCircle:before {
+    top: 0vw;
+    width: 320px;
+    height: 320px;
+  }
+
+  .BgCircle:after {
+    bottom: 0;
+    width: 280px;
+    height: 280px;
+  }
+}
